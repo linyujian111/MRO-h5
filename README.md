@@ -1,8 +1,6 @@
 # mobileappproject
 
 
-<!-- 测试第二次提交 -->
-
 ## Project setup
 ```
 npm install
