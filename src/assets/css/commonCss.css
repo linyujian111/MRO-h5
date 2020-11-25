@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+   
+    overflow: auto;
+    min-height: 100% !important;
+    height: 100% !important;
+}
+#app{
+    font-size:16px;
+    height: 100% !important;
+    min-height: 100% !important;
+    overflow: auto;
+}
+.van-toast--unclickable{
+    height: 100%;
+  
+}
+
+h1{
+    font-size:28px;
+}
+h2{
+    font-size:26px;
+}
+h3{
+    font-size:24px;
+}
+h4{
+    font-size:22px;
+}
+h5{
+    font-size:20px;
+}
+h6{
+    font-size:18px;
+}
+
+.main-container{
+    padding:10px;
+}
+.text-align{
+    text-align:center;
+}
+.text-left{
+    text-align:left;
+}
+.text-right{
+    text-align:right;
+}
+.margin-top{
+    margin-top:10px;
+}
+.margin-bottom{
+    margin-bottom:10px;
+}
+.margin-left{
+    margin-left:10px;
+}
+.margin-right{
+    margin-right:10px;
+}
+.border-radius{
+    border-radius:5px;
+}
+.clearFix::after{
+    display:block;
+    content:'';
+    height:0;
+    visibility:hidden;
+    clear:both;
+    zoom:1;
+}
+/* 去掉input框Number类型的默认箭头 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ios 自带滚动条不平滑解决方法 */
+.touchScroll{
+    -webkit-overflow-scrolling: touch; 
+}
+input::-webkit-input-placeholder {
+    color: rgb(100, 101, 102) !important;
+  }
+    　
+
+.flexCC{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.flexRC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

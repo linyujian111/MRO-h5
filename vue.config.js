@@ -1,4 +1,4 @@
-const path = require('path');
+﻿const path = require('path');
 const resolve = (dir) => path.join(__dirname, dir);
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i;
