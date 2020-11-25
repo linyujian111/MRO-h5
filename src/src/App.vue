@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div v-show="!isshowAPP" class="HPbox">
-      为了较好的页面体验，请切换至竖屏浏览页面
+      <!-- 为了较好的页面体验，请切换至竖屏浏览页面 -->
     </div>
     <keep-alive v-show="isshowAPP">
       <router-view v-if="this.$route.meta.keepAlive" />
