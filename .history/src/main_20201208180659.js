@@ -113,11 +113,10 @@ if (process.env.NODE_ENV != 'production') {
 // })
 
 
-
-// 点击某个按钮的埋点处理------------------------------------------------------
 Vue.directive('stat', {
     bind(el, binding) {
       el.addEventListener('click', () => {
+
 
         //  点击的元素
           console.log(el)
@@ -125,10 +124,13 @@ Vue.directive('stat', {
         //   接受指令传递的参数 
           console.log(binding)
 
+       
+
         const data = binding.value;
+
         let prefix = 'store';
 
-    
+        // console.log(OS)
 
         // 判断是哪个端
 
@@ -149,27 +151,10 @@ Vue.directive('stat', {
   });
 
 
-
-//   页面跳转的检测的埋点处理----------------------------------------------------
 const analyticsRequest = (to, from) => {
-
     // 只统计页面跳转数据，不统计当前页 query 不同的数据
     // 所以这里只使用了 path, 如果需要统计 query 的，可以使用 to.fullPath
-        console.log('location.protocol')
-        // console.log(location.protocol)  http:
-        // console.log(location.host) localhost:8080
-        // console.log(to.path)  /login
-
-        // console.log('to.fullPath'); 
-        // console.log(to.fullPath)
-        // console.log('to.path')
-        // console.log(to.path)
-
     if (to.path !== from.path) {
-
-        // console.log(location.protocol)
-        // console.log(location.host)
-        // console.log(to.path)
     //   analytics.request({
     //     url: `${location.protocol}//${location.host}${to.path}`
     //   });
@@ -182,36 +167,34 @@ const analyticsRequest = (to, from) => {
 router.beforeEach((to, from, next) => {
     console.log(to.matched)
 
-    let requiresAuth = to.matched.some(record =>{
+    let a = to.matched.some(record =>{
         console.log('record')
 
         console.log(record)
        return  record.meta.requiresAuth;
     })
 
- 
-    // 登录拦截的页面
-    if (requiresAuth) {
+
+
+
+    if (a) {
         // 这里做登录等前置逻辑判断
         // 判断通过之后，再上报数据
-
+        
         analyticsRequest(to, from);
-   // 不需要拦截的页面
       } else {
-
         // 不需要判断的，直接上报数据
         analyticsRequest(to, from);
         next();
       }
 
 
-    // document.querySelector('#app').scrollTo(0,0)
-    // next();
+    document.querySelector('#app').scrollTo(0,0)
+    next();
 
     
     // // 每切换一个页面关闭页面的弹框提示
     // Toast.clear();  
-
 
     // // 校验是否微信客户端打开
 

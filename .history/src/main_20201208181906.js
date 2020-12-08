@@ -152,24 +152,17 @@ Vue.directive('stat', {
 
 //   页面跳转的检测的埋点处理----------------------------------------------------
 const analyticsRequest = (to, from) => {
-
     // 只统计页面跳转数据，不统计当前页 query 不同的数据
     // 所以这里只使用了 path, 如果需要统计 query 的，可以使用 to.fullPath
-        console.log('location.protocol')
-        // console.log(location.protocol)  http:
-        // console.log(location.host) localhost:8080
-        // console.log(to.path)  /login
+    console.log('to.fullPath')
 
-        // console.log('to.fullPath'); 
-        // console.log(to.fullPath)
-        // console.log('to.path')
-        // console.log(to.path)
+        console.log(to.fullPath)
 
     if (to.path !== from.path) {
 
-        // console.log(location.protocol)
-        // console.log(location.host)
-        // console.log(to.path)
+        console.log(location.protocol)
+        console.log(location.host)
+        console.log(to.path)
     //   analytics.request({
     //     url: `${location.protocol}//${location.host}${to.path}`
     //   });

@@ -54,40 +54,31 @@ export default {
 </script>
 
 <style lang='less' scoped>
-
-.view{
-  background: #f2f3f5;
-  position: absolute;
-  top:0;
+#app {
+  width: 100%;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-align: center; */
+  color: #2c3e50;
+}
+/deep/ .van-search {
+  padding: 6px;
+}
+/deep/ .HPbox {
+  font-size: 12px;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-// #app {
-//   width: 100%;
-//   font-family: "Avenir", Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   /* text-align: center; */
-//   color: #2c3e50;
-// }
-// /deep/ .van-search {
-//   padding: 6px;
-// }
-// /deep/ .HPbox {
-//   font-size: 12px;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-// /deep/ .marginbox{
-//   height:50px;
-// }
+/deep/ .marginbox{
+  height:50px;
+}
 
 
-// /deep/ .van-nav-bar__title{
-//   font-size: 15px;
-// }
+/deep/ .van-nav-bar__title{
+  font-size: 15px;
+}
 </style>

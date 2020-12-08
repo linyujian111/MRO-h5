@@ -56,12 +56,11 @@ export default {
 <style lang='less' scoped>
 
 .view{
-  background: #f2f3f5;
+  background: red;
   position: absolute;
   top:0;
   width: 100%;
   height: 100%;
-  overflow: auto;
 }
 // #app {
 //   width: 100%;

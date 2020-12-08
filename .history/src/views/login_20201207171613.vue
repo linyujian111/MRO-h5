@@ -93,7 +93,7 @@ export default {
             Toast.clear();
             Toast.success(res.errmsg);
             setTimeout(() => {
-              this.$router.push({ name: "delivery" });
+              this.$router.push({ name: "home" });
             }, 1000);
           } else {
             Toast.fail("账号密码错误，请重新输入");

@@ -2,6 +2,7 @@
   <!-- 内容区域 -->
   <div class="MRO-login">
     <img src="../assets/image/mrolgbg.jpg" alt="" class="lgbgimg" />
+
     <div class="login-box">
       <van-form @submit="onSubmit">
         <van-field
@@ -68,7 +69,7 @@ export default {
 
   methods: {
     onSubmit() {
-      //  this.$router.push({ name: "home" });
+       this.$router.push({ name: "home" });
       Toast.loading({
         duration: 0,
         message: "登录中...",
@@ -86,24 +87,18 @@ export default {
       login
         .toLogin(data)
         .then((res) => {
-          console.log(res)
-          
-
           if (res.errcode == "ok") {
-            Toast.clear();
-            Toast.success(res.errmsg);
-            setTimeout(() => {
-              this.$router.push({ name: "delivery" });
-            }, 1000);
+            // Toast.clear();
+            // Toast.success(res.errmsg);
+            // setTimeout(() => {
+            //   this.$router.push({ name: "home" });
+            // }, 1000);
           } else {
-            Toast.fail("账号密码错误，请重新输入");
+            // Toast.fail("账号密码错误，请重新输入");
           }
         })
-        
         .catch((err) => {
-                    // console.log(err)
-
-          Toast.fail("登录失败");
+          // Toast.fail("账号密码错误，请重新输入");
         });
         
       // login.toLogin.post({

@@ -2,6 +2,7 @@
   <!-- 内容区域 -->
   <div class="MRO-login">
     <img src="../assets/image/mrolgbg.jpg" alt="" class="lgbgimg" />
+
     <div class="login-box">
       <van-form @submit="onSubmit">
         <van-field
@@ -68,50 +69,40 @@ export default {
 
   methods: {
     onSubmit() {
-      //  this.$router.push({ name: "home" });
-      Toast.loading({
-        duration: 0,
-        message: "登录中...",
-        forbidClick: true,
-        loadingType: "spinner",
-      });
+       this.$router.push({ name: "home" });
+      // Toast.loading({
+      //   duration: 0,
+      //   message: "登录中...",
+      //   forbidClick: true,
+      //   loadingType: "spinner",
+      // });
 
-     
-
-
-      let data = new FormData();
-      // 获取菜单列表
-      data.append("username", this.username);
-      data.append("password", this.password);
-      login
-        .toLogin(data)
-        .then((res) => {
-          console.log(res)
-          
-
-          if (res.errcode == "ok") {
-            Toast.clear();
-            Toast.success(res.errmsg);
-            setTimeout(() => {
-              this.$router.push({ name: "delivery" });
-            }, 1000);
-          } else {
-            Toast.fail("账号密码错误，请重新输入");
-          }
-        })
-        
-        .catch((err) => {
-                    // console.log(err)
-
-          Toast.fail("登录失败");
-        });
-        
+      // let data = new FormData();
+      // // 获取菜单列表
+      // data.append("username", this.username);
+      // data.append("password", this.password);
+      // login
+      //   .toLogin(data)
+      //   .then((res) => {
+      //     if (res.errcode == "ok") {
+      //       Toast.clear();
+      //       Toast.success(res.errmsg);
+      //       setTimeout(() => {
+      //         this.$router.push({ name: "home" });
+      //       }, 1000);
+      //     } else {
+      //       Toast.fail("账号密码错误，请重新输入");
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     Toast.fail("账号密码错误，请重新输入");
+      //   });
       // login.toLogin.post({
 
       // }).then(res=>{
       //     console.log(res)
       // })
-      
+      //
     },
   },
 };
