@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+
+    <!-- GrowingIO Analytics code version 2.1 -->
+    <!-- Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com -->
+    <!-- End GrowingIO Analytics code version: 2.1 -->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -10,7 +15,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>UrbanRevivo</title>
-
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=c3d4ec87374449fbf5f88e48608c00fb"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./mobile-detect.min.js"></script>
 </head>
 
 <script src="http://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
@@ -21,20 +28,56 @@
 </body>
 
 
+
 <script>
+    //打印系统版本和手机型号
+    
+    //判断数组中是否包含某字符串
+    Array.prototype.contains = function (needle) {
+        for (i in this) {
+            if (this[i].indexOf(needle) > 0)
+                return i;
+        }
+        return -1;
+    }
+    //打印系统版本和手机型号
+
+    var device_type = navigator.userAgent; //获取userAgent信息
+    console.log(device_type); //打印到页面
+    var md = new MobileDetect(device_type); //初始化mobile-detect
+    var os = md.os(); //获取系统
+    var model = "";
 
 
+    //ios系统的处理
+    if (os == "iOS") {
+        os = md.os() + md.version("iPhone");
+        model = md.mobile();
+
+        //Android系统的处理
+
+    } else if (os == "AndroidOS") {
+        os = md.os() + md.version("Android");
+        var sss = device_type.split(";");
+        var i = sss.contains("Build/");
+        if (i > -1) {
+            model = sss[i].substring(0, sss[i].indexOf("Build/"));
+        }
+    }
+    console.log(os + "---" + model); //打印系统版本和手机型号
+    //  $('#app').html(device_type + '</br></br>' + os + "---" + model);
+
+</script>
+
+
+<script>
     // setInterval(() => {
-
     //     document.title = "ssssss"
-
     //     document.body.appendChild(i);
-
     //     // document.querySelector('title').innerHtml='首页'
     //     // // console.log('2222')
     //     // console.log(document.querySelector('title').innerText)
     // }, 1000)
-
 </script>
 
 </html>

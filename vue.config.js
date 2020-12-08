@@ -26,6 +26,7 @@ const pages = {
 module.exports = {
     publicPath: './',
     pages: pages,
+  
     devServer: {
         port:8080,
         // disableHostCheck:true,

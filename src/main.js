@@ -10,6 +10,7 @@ import './utils/androidBack'; //引入Hbuilder打包app监听物理键返回的�
 // import './utils/getGolacation'; //引入Hbuilder打包定位的处理方法
 import 'amfe-flexible/index.js';
 
+
 import Storage from 'vue-web-storage';
 import installComponent from '@/components/Height_components/index.js';
 import myPlugins from 'vue-plugin-tips-six';
@@ -46,6 +47,7 @@ Vue.use(Cell)
     .use(Row)
     .use(Col);
 Vue.use(myPlugins);
+
 //实例化插件
 // if (!isPro) {
 //     const vConsole = new Vconsole();
@@ -68,6 +70,7 @@ import 'vue-plugin-tips-six/lib/vue-plugin-tips-six.css';
 import { format } from 'core-js/fn/date';
 
 Vue.config.productionTip = false;
+
 
 //自定义指令
 Vue.directive('display-key', {
@@ -118,7 +121,6 @@ if (process.env.NODE_ENV != 'production') {
 Vue.directive('stat', {
     bind(el, binding) {
       el.addEventListener('click', () => {
-
         //  点击的元素
           console.log(el)
 
@@ -129,6 +131,8 @@ Vue.directive('stat', {
         let prefix = 'store';
 
     
+        // 收集检测 用户id，操作时间，操作地点，操作手机型号，操作事件
+
 
         // 判断是哪个端
 
@@ -136,8 +140,6 @@ Vue.directive('stat', {
         //   prefix = 'mall';
         // }
 
-
-        
         // analytics.request({
         //   ty: `${prefix}_${data.type}`,
         //   dc: data.desc || ''

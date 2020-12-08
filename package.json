@@ -17,6 +17,7 @@
     "compression-webpack-plugin": "^2.0.0",
     "core-js": "^2.6.9",
     "html2canvas": "^1.0.0-rc.5",
+    "mobile-detect": "^1.4.4",
     "qrcode": "^1.4.1",
     "qs": "^6.8.0",
     "sockjs": "^0.3.19",
